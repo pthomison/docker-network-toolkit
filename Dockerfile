@@ -12,4 +12,5 @@ RUN dnf install -y \
 nmap \
 nmap-ncat \
 tcpdump \
-iptables
+iptables \
+bind-utils
