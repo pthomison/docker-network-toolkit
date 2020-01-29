@@ -13,4 +13,5 @@ nmap \
 nmap-ncat \
 tcpdump \
 iptables \
-bind-utils
+bind-utils \
+openssh-clients
