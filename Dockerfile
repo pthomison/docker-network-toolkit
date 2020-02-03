@@ -15,7 +15,8 @@ nmap-ncat \
 tcpdump \
 iptables \
 bind-utils \
-net-tools 
+net-tools \
+mariadb 
 
 # process tools
 RUN dnf install -y \
