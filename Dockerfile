@@ -14,7 +14,8 @@ nmap \
 nmap-ncat \
 tcpdump \
 iptables \
-bind-utils 
+bind-utils \
+net-tools 
 
 # process tools
 RUN dnf install -y \
