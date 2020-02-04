@@ -1,15 +1,19 @@
+set -xe
+
 function jump() {
-	local user=$1
+	local bastion_user=$1
 	local bastion_ip=$2
-	local instance_ip=$3
-	local key=$4
+	local bastion_key=$3
+	local instance_user=$4
+	local instance_ip=$5
+	local instance_key=$6
 
 	ssh -v \
 	-F /dev/null \
-	-i ${key} \
-	${user}@${instance_ip} \
+	-i ${instance_key} \
+	${instance_user}@${instance_ip} \
 	-o StrictHostKeyChecking=no \
-	-o "proxycommand ssh -W %h:%p -i $key -F /dev/null -o StrictHostKeyChecking=no ${user}@${bastion_ip}"
+	-o "proxycommand ssh -W %h:%p -i $bastion_key -F /dev/null -o StrictHostKeyChecking=no ${bastion_user}@${bastion_ip}"
 }
 
-jump $1 $2 $3 $4
+jump $@
